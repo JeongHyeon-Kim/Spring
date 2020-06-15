@@ -1,0 +1,15 @@
+# At Eclipse IDE
+
+ctrl + shift + F 자동 들여쓰기
+ctrl + TAB 내어쓰기
+TAB 들여쓰기
+
+Alt + 방향키 위/아래 코드 위/아래로 움직이기
+ctrl + space키 기본 생성자 추가
+마우스 오른쪽 클릭 - Source - Generate Constructor using Field 오버로딩된 생성자 생성(필요 없는 super 삭제)
+ctrl + shift + o 자동으로 인터페이스 import
+ctrl + pg up/down 탭간 이동
+
+ctrl + shift + c 해당 행 주석
+ctrl + shift + / 영역 주석
+ctrl + shift + \ 영역 주석 해제
