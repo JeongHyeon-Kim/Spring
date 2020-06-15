@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<context:annotation-config /> <!-- 이 한줄만 써주면 코드에서 Annotation을 참고하게 됨 -->
+	<!-- Exam exam = new NewlecExam();-->
+	<bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10" /> <!-- 처리기 도움 받기 -->
+	<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="20" p:eng="20" />
+		<!-- 순서가 헷갈릴 수 있음: name 지정
+		<constructor-arg name="kor" value="10"></constructor-arg>
+		<constructor-arg name="eng" value="20"></constructor-arg>
+		<constructor-arg name="com" value="30"></constructor-arg>
+		<constructor-arg name="math" value="40"></constructor-arg> -->
+	<!-- ExamConsole console = new GridExamConsole(); -> ref형 -->
+	<bean id="console" class="spring.di.ui.InlineExamConsole">
+		<!-- console.setExam(exam); -->
+		<!-- <property name="exam" ref="exam"></property> --> <!-- 지워서 Annotation으로 대신할 것 -->
+	</bean>
+	
+	<!-- <bean id="exams" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<bean class="spring.di.entity.NewlecExam" p:kor="1" p:eng="1" />
+				<ref bean="exam"></ref>
+			</list>
+		</constructor-arg>
+	</bean> -->
+</beans>
