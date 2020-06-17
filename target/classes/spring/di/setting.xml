@@ -9,8 +9,8 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 	<context:annotation-config /> <!-- 이 한줄만 써주면 코드에서 Annotation을 참고하게 됨 -->
 	<!-- Exam exam = new NewlecExam();-->
-	<bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10" /> <!-- 처리기 도움 받기 -->
-	<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="20" p:eng="20" />
+<!-- 	<bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10" /> 처리기 도움 받기 -->
+<!-- 	<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="20" p:eng="20" /> -->
 		<!-- 순서가 헷갈릴 수 있음: name 지정
 		<constructor-arg name="kor" value="10"></constructor-arg>
 		<constructor-arg name="eng" value="20"></constructor-arg>
