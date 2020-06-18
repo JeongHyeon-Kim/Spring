@@ -21,7 +21,7 @@ public class Program {
 		//System.out.println(exam.toString());
 		
 		ExamConsole console = (ExamConsole) context.getBean("console");//id로 꺼내기(형변환 필요)
-		// ExamConsole console = context.getBean(ExamConsole.class);
+//		ExamConsole console = context.getBean(ExamConsole.class);
 		console.print(); //실제 소스 코드에 @Autowired 쓰기(InlineExamConsole) 
 		
 		//4. 콜렉션(ex. ArrayList) 써보기

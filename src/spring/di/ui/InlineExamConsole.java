@@ -2,12 +2,14 @@ package spring.di.ui;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import spring.di.entity.Exam;
 
+@Component("console")
 public class InlineExamConsole implements ExamConsole {
-	@Autowired(required = false) //이곳에서 DI를 하도록 Annotation을 추가
-	@Qualifier("exam2")
+	@Autowired //이곳에서 DI를 하도록 Annotation을 추가
+//	@Qualifier("exam2")
 	private Exam exam;
 	
 	public InlineExamConsole() {
