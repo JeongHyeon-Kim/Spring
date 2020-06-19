@@ -1,11 +1,13 @@
 package spring.di.entity;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
-@Component
+//@Service 개념 상 맞지 않으니 다음 시간엔 바꿀 예정
 public class NewlecExam implements Exam {
-	
+	@Value("20")
 	private int kor;
+	@Value("30")
 	private int eng;
 	private int math;
 	private int com;
