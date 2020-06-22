@@ -10,7 +10,7 @@
 
 	<context:component-scan base-package="spring.di.ui, spring.di.entity" /> <!-- 이 부분을 써주게 되면서 위의 코드가 필요 없어짐 -->
 	<!-- Exam exam = new NewlecExam();-->
-<!-- 	<bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10" /> 처리기 도움 받기 -->
+	<bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10" /> <!-- 처리기 도움 받기 -->
 <!-- 	<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="20" p:eng="20" /> -->
 		<!-- 순서가 헷갈릴 수 있음: name 지정
 		<constructor-arg name="kor" value="10"></constructor-arg>

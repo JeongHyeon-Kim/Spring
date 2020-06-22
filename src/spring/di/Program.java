@@ -1,13 +1,8 @@
 package spring.di;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import spring.di.entity.Exam;
-import spring.di.entity.NewlecExam;
 import spring.di.ui.ExamConsole;
 
 public class Program {
@@ -15,8 +10,8 @@ public class Program {
 	public static void main(String[] args) {
 		
 		ApplicationContext context = //IoC Container
-				new ClassPathXmlApplicationContext("spring/di/setting.xml"); // src가 root(실행 위치) 기준
-		
+				new AnnotationConfigApplicationContext(NewlecDIConfig.class);
+//				new ClassPathXmlApplicationContext("spring/di/setting.xml"); // src가 root(실행 위치) 기준
 		//Exam exam = context.getBean(Exam.class); // setting된 값 확인용
 		//System.out.println(exam.toString());
 		
