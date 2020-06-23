@@ -8,9 +8,14 @@ import spring.di.ui.ExamConsole;
 public class Program {
 
 	public static void main(String[] args) {
-		
-		ApplicationContext context = //IoC Container
-				new AnnotationConfigApplicationContext(NewlecDIConfig.class);
+		/* 1. 하나를 넣는 방법 */
+//		ApplicationContext context = //IoC Container
+//				new AnnotationConfigApplicationContext(NewlecDIConfig.class);
+		/* 2. 여러개를 넣는 방법 */
+		AnnotationConfigApplicationContext context = //IoC Container
+				new AnnotationConfigApplicationContext();
+		context.register(NewlecDIConfig.class); // register 함수를 통해 여러개를 넣을 수 있음
+		context.refresh();
 //				new ClassPathXmlApplicationContext("spring/di/setting.xml"); // src가 root(실행 위치) 기준
 		//Exam exam = context.getBean(Exam.class); // setting된 값 확인용
 		//System.out.println(exam.toString());
