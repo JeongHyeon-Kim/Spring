@@ -8,27 +8,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
-	<context:component-scan base-package="spring.di.ui, spring.di.entity" /> <!-- 이 부분을 써주게 되면서 위의 코드가 필요 없어짐 -->
-	<!-- Exam exam = new NewlecExam();-->
-	<bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10" /> <!-- 처리기 도움 받기 -->
-<!-- 	<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="20" p:eng="20" /> -->
-		<!-- 순서가 헷갈릴 수 있음: name 지정
-		<constructor-arg name="kor" value="10"></constructor-arg>
-		<constructor-arg name="eng" value="20"></constructor-arg>
-		<constructor-arg name="com" value="30"></constructor-arg>
-		<constructor-arg name="math" value="40"></constructor-arg> -->
-	<!-- ExamConsole console = new GridExamConsole(); -> ref형 -->
-	<!-- <bean id="console" class="spring.di.ui.InlineExamConsole">
-		console.setExam(exam);
-		<property name="exam" ref="exam"></property> 지워서 Annotation으로 대신할 것
-	</bean> -->
-	
-	<!-- <bean id="exams" class="java.util.ArrayList">
-		<constructor-arg>
+	<bean id="target" class="spring.aop.entity.NewlecExam" p:kor="1" p:eng="1" p:math="1" p:com="1" />
+	<bean id="logAroundAdvice" class="spring.aop.advice.LogAroundAdvice" />
+	<bean id="exam" class="org.springframework.aop.framework.ProxyFactoryBean" >
+		<property name="target" ref="target"/> <!-- setter 이름 명명: setTarget 대신 target -->
+		<property name="interceptorNames">
 			<list>
-				<bean class="spring.di.entity.NewlecExam" p:kor="1" p:eng="1" />
-				<ref bean="exam"></ref>
+				<value>logAroundAdvice</value>
 			</list>
-		</constructor-arg>
-	</bean> -->
+		</property>
+	</bean>
 </beans>
