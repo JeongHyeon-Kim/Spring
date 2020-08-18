@@ -17,7 +17,7 @@
 		</ol>
 
 		<%
-			List<String> hobbies = new ArrayList<>();
+			List<String> hobbies = new ArrayList<Integer>();
 			hobbies.add("자전거 타기");
 			hobbies.add("야구장 가기");
 			hobbies.add("넷플릭스 보기");
