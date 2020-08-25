@@ -49,10 +49,74 @@
     </nav>
 
     <div class="container">
-
       <div class="starter-template">
         <h1>Bootstrap starter template</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+
+        <!-- list example1 -->
+        <div id="board">
+            <table id="bList" width="800" border="3" bordercolor="lightgray">
+                <tr heigh="30">
+                    <td>글번호</td>
+                    <td>제목</td>
+                    <td>작성자</td>
+                    <td>작성일</td>
+                    <td>조회수</td>
+                </tr>
+            <c:forEach var="board" items="${requestScope.list}">
+                <tr>
+                    <td>${board.board_num}</td>
+                    <td>
+                        <a href="BoardDetailAction.bo?num=${board.board_num}&pageNum=${pageNum}">
+                        ${board.board_subject}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                        ${board.board_id}
+                        </a>
+                    </td>
+                    <td>${board.board_date}</td>
+                    <td>${board.board_count}</td>
+                </tr>
+            </c:forEach>
+            </table>
+        </div>
+
+        <!-- list example2 -->
+        <div class="col-md-6">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <p class="follow">made by Jeonghyeon-Kim</p>
       </div>
 
